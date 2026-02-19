@@ -2,7 +2,7 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 
 export function useOperatingHours() {
   const currentTime = ref(new Date());
-  const openingHour = 8;
+  const openingHour = 12;
   const closingHour = 22;
 
   const updateCurrentTime = () => {
