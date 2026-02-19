@@ -15,7 +15,7 @@ export const menuCategories = [
         name: "Americano",
         description: "Espresso with hot water for a smoother taste",
         price: "30K",
-        image: "/src/assets/americano.jpg?w=400&h=400&fit=crop",
+        image: "/public/americano.jpg?w=400&h=400&fit=crop",
       },
       {
         id: "e3",
@@ -29,7 +29,7 @@ export const menuCategories = [
         name: "Latte",
         description: "Creamy espresso with steamed milk",
         price: "40K",
-        image: "/src/assets/latte.jpg?w=400&h=400&fit=crop",
+        image: "/public/latte.jpg?w=400&h=400&fit=crop",
       },
       {
         id: "e5",
@@ -56,7 +56,7 @@ export const menuCategories = [
         name: "Strawberry Smoothie",
         description: "Fresh strawberries blended with yogurt",
         price: "45K",
-        image: "/src/assets/strawbery-smothies.jpg?w=400&h=400&fit=crop",
+        image: "/public/strawbery-smothies.jpg?w=400&h=400&fit=crop",
       },
     ],
   },
@@ -76,7 +76,7 @@ export const menuCategories = [
         name: "Chai Latte",
         description: "Spiced tea with steamed milk",
         price: "38K",
-        image: "/src/assets/chai-latte.jpg?w=400&h=400&fit=crop",
+        image: "/public/chai-latte.jpg?w=400&h=400&fit=crop",
       },
       {
         id: "nc3",
@@ -90,7 +90,7 @@ export const menuCategories = [
         name: "Strawberry Smoothie",
         description: "Fresh strawberries blended with yogurt",
         price: "45K",
-        image: "/src/assets/strawbery-smothies.jpg?w=400&h=400&fit=crop",
+        image: "/public/strawbery-smothies.jpg?w=400&h=400&fit=crop",
       },
       {
         id: "nc5",
@@ -117,7 +117,7 @@ export const menuCategories = [
         name: "Chocolate Croissant",
         description: "Croissant filled with dark chocolate",
         price: "32K",
-        image: "/src/assets/chocolate-croisant.jpg?w=400&h=400&fit=crop",
+        image: "/public/chocolate-croisant.jpg?w=400&h=400&fit=crop",
       },
       {
         id: "p3",
@@ -138,7 +138,7 @@ export const menuCategories = [
         name: "Cheesecake",
         description: "Classic New York style cheesecake",
         price: "45K",
-        image: "/src/assets/cheescake.jpg?w=400&h=400&fit=crop",
+        image: "/public/cheescake.jpg?w=400&h=400&fit=crop",
       },
     ],
   },
