@@ -1,0 +1,132 @@
+export const menuCategories = [
+  {
+    id: 'espresso',
+    name: 'Espresso',
+    items: [
+      {
+        id: 'e1',
+        name: 'Espresso',
+        description: 'Rich and bold single shot of espresso',
+        price: '25K',
+        image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'e2',
+        name: 'Americano',
+        description: 'Espresso with hot water for a smoother taste',
+        price: '30K',
+        image: 'https://images.unsplash.com/photo-1551030173-122f5252c454?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'e3',
+        name: 'Cappuccino',
+        description: 'Espresso with steamed milk and foam',
+        price: '38K',
+        image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'e4',
+        name: 'Latte',
+        description: 'Creamy espresso with steamed milk',
+        price: '40K',
+        image: 'https://images.unsplash.com/photo-1570968992193-96ab71dd16b5?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'e5',
+        name: 'Mocha',
+        description: 'Espresso with chocolate and steamed milk',
+        price: '45K',
+        image: 'https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'e6',
+        name: 'Macchiato',
+        description: 'Espresso with a dollop of foamed milk',
+        price: '35K',
+        image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=400&h=400&fit=crop'
+      }
+    ]
+  },
+  {
+    id: 'non-coffee',
+    name: 'Non-Coffee',
+    items: [
+      {
+        id: 'nc1',
+        name: 'Matcha Latte',
+        description: 'Premium Japanese matcha with steamed milk',
+        price: '42K',
+        image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'nc2',
+        name: 'Chai Latte',
+        description: 'Spiced tea with steamed milk',
+        price: '38K',
+        image: 'https://images.unsplash.com/photo-1576092768241-dec231847233?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'nc3',
+        name: 'Hot Chocolate',
+        description: 'Rich Belgian chocolate with steamed milk',
+        price: '40K',
+        image: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'nc4',
+        name: 'Strawberry Smoothie',
+        description: 'Fresh strawberries blended with yogurt',
+        price: '45K',
+        image: 'https://images.unsplash.com/photo-1577805947697-b988342576f1?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'nc5',
+        name: 'Mango Tango',
+        description: 'Tropical mango smoothie with a hint of lime',
+        price: '45K',
+        image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=400&h=400&fit=crop'
+      }
+    ]
+  },
+  {
+    id: 'pastries',
+    name: 'Pastries',
+    items: [
+      {
+        id: 'p1',
+        name: 'Butter Croissant',
+        description: 'Flaky, buttery French pastry',
+        price: '28K',
+        image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'p2',
+        name: 'Chocolate Croissant',
+        description: 'Croissant filled with dark chocolate',
+        price: '32K',
+        image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'p3',
+        name: 'Blueberry Muffin',
+        description: 'Freshly baked muffin with blueberries',
+        price: '25K',
+        image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'p4',
+        name: 'Cinnamon Roll',
+        description: 'Warm cinnamon roll with cream cheese frosting',
+        price: '30K',
+        image: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400&h=400&fit=crop'
+      },
+      {
+        id: 'p5',
+        name: 'Cheesecake',
+        description: 'Classic New York style cheesecake',
+        price: '45K',
+        image: 'https://images.unsplash.com/photo-1533134242116-79c5e60818a7?w=400&h=400&fit=crop'
+      }
+    ]
+  }
+]
