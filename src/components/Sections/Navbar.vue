@@ -7,6 +7,7 @@ const isMenuOpen = ref(false)
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Menu', href: '#menu' },
+  { name: 'Facilities', href: '#facilities' },
   { name: 'Location', href: '#location' }
 ]
 
@@ -20,29 +21,30 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <nav class="bg-white/70 backdrop-blur-md sticky top-0 z-50 border-b border-stone-200">
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-stone-200/50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16 md:h-20">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="#home" class="font-playfair text-2xl md:text-3xl font-bold text-amber-900 hover:text-amber-800 transition-colors">
+          <a href="#home" class="font-playfair text-2xl md:text-3xl font-bold text-amber-900 hover:text-amber-700 transition-colors duration-300">
             Ruang Namu
           </a>
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-1">
           <a
             v-for="link in navLinks"
             :key="link.name"
             :href="link.href"
-            class="text-stone-700 hover:text-amber-900 font-medium transition-colors duration-300"
+            class="relative text-stone-700 hover:text-amber-900 font-medium px-4 py-2 transition-colors duration-300 group"
           >
             {{ link.name }}
+            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-900 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
           <a
             href="#menu"
-            class="bg-amber-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-amber-800 transition-all duration-300"
+            class="ml-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white px-7 py-2.5 rounded-full font-medium hover:from-amber-800 hover:to-amber-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
           >
             Order Now
           </a>
@@ -71,21 +73,21 @@ const closeMenu = () => {
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-4"
     >
-      <div v-if="isMenuOpen" class="md:hidden bg-white border-t border-stone-200">
-        <div class="px-4 py-4 space-y-3">
+      <div v-if="isMenuOpen" class="md:hidden bg-white/95 backdrop-blur-md border-t border-stone-200 shadow-lg">
+        <div class="px-4 py-5 space-y-2">
           <a
             v-for="link in navLinks"
             :key="link.name"
             :href="link.href"
             @click="closeMenu"
-            class="block text-stone-700 hover:text-amber-900 font-medium py-2 transition-colors"
+            class="block text-stone-700 hover:text-amber-900 font-medium py-3 px-3 rounded-lg hover:bg-amber-50 transition-all duration-300"
           >
             {{ link.name }}
           </a>
           <a
             href="#menu"
             @click="closeMenu"
-            class="block bg-amber-900 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-amber-800 transition-all duration-300 mt-4"
+            class="block bg-gradient-to-r from-amber-900 to-amber-800 text-white text-center px-6 py-3 rounded-full font-medium hover:from-amber-800 hover:to-amber-700 transition-all duration-300 shadow-md mt-4"
           >
             Order Now
           </a>
