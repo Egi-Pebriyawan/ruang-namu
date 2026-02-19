@@ -27,14 +27,14 @@ const whatsappMessage = "Hello Ruang Namu, I would like to make a reservation.";
 </script>
 
 <template>
-  <section id="location" class="py-20 bg-stone-50">
+  <section id="location" class="py-10 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16">
         <span class="inline-block text-amber-700 font-medium text-sm md:text-base mb-3 tracking-wider uppercase"> Come Visit Us </span>
         <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-amber-900 mb-4">Visit Us</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6 rounded-full"></div>
-        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto">Find us in the heart of Jakarta. We can't wait to serve you the perfect cup.</p>
+        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto">Find us in the heart of Depok. We can't wait to serve you the perfect cup.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">

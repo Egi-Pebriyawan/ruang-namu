@@ -1,31 +1,31 @@
 <script setup>
 const facilities = [
   {
-    name: 'Parking Area',
-    icon: '🚗',
-    description: 'Spacious & secure parking for your convenience',
+    name: "Parking Area",
+    icon: "🚗",
+    description: "Spacious & secure parking for your convenience",
   },
   {
-    name: 'Open Space',
-    icon: '🌿',
-    description: 'Breathe in the fresh air in our garden seating',
+    name: "Open Space",
+    icon: "🌿",
+    description: "Breathe in the fresh air in our garden seating",
   },
   {
-    name: 'Free WiFi',
-    icon: '📶',
-    description: 'Stay connected with high-speed internet',
+    name: "Free WiFi",
+    icon: "📶",
+    description: "Stay connected with high-speed internet",
   },
   {
-    name: 'Toilet',
-    icon: '🚻',
-    description: 'Clean & well-maintained restrooms',
+    name: "Toilet",
+    icon: "🚻",
+    description: "Clean & well-maintained restrooms",
   },
   {
-    name: 'Mushola',
-    icon: '🕌',
-    description: 'Peaceful prayer space for your comfort',
+    name: "Mushola",
+    icon: "🕌",
+    description: "Peaceful prayer space for your comfort",
   },
-]
+];
 </script>
 
 <template>
@@ -37,16 +37,10 @@ const facilities = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16 md:mb-20">
-        <span class="inline-block text-amber-700 font-medium text-sm md:text-base mb-3 tracking-wider uppercase">
-          Comfort First
-        </span>
-        <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-6">
-          Our Facilities
-        </h2>
+        <span class="inline-block text-amber-700 font-medium text-sm md:text-base mb-3 tracking-wider uppercase"> Comfort First </span>
+        <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-6">Our Facilities</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6 rounded-full"></div>
-        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          Everything you need for a comfortable and memorable experience at Ruang Namu.
-        </p>
+        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">Everything you need for a comfortable and memorable experience at Ruang Namu.</p>
       </div>
 
       <!-- Facilities Grid -->

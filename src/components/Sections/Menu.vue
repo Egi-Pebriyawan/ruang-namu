@@ -1,8 +1,24 @@
 <script setup>
-import { ref } from 'vue'
-import { menuCategories } from '@/data/menuData'
+import { ref, computed } from "vue";
+import { menuCategories } from "@/data/menuData";
+const activeCategory = ref(menuCategories[0].id);
 
-const activeCategory = ref(menuCategories[0].id)
+const currentItems = computed(() => {
+  const category = menuCategories.find((c) => c.id === activeCategory.value);
+  return category?.items || [];
+});
+
+const showButton = computed(() => currentItems.value.length > 2);
+
+const scrollToTopMenu = () => {
+  const el = document.getElementById("menu");
+  if (el) {
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 </script>
 
 <template>
@@ -10,29 +26,21 @@ const activeCategory = ref(menuCategories[0].id)
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16">
-        <span class="inline-block text-amber-700 font-medium text-sm md:text-base mb-3 tracking-wider uppercase">
-          Discover Our Flavors
-        </span>
-        <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-amber-900 mb-4">
-          Our Menu
-        </h2>
+        <span class="inline-block text-amber-700 font-medium text-sm md:text-base mb-3 tracking-wider uppercase"> Discover Our Flavors </span>
+        <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-amber-900 mb-4">Our Menu</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6 rounded-full"></div>
-        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto">
-          Discover our carefully crafted selection of coffee, non-coffee beverages, and freshly baked pastries.
-        </p>
+        <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto">Discover our carefully crafted selection of coffee, non-coffee beverages, and freshly baked pastries.</p>
       </div>
 
       <!-- Category Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12">
+      <div id="menu-categories-top" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12">
         <button
           v-for="category in menuCategories"
           :key="category.id"
           @click="activeCategory = category.id"
           :class="[
             'px-5 md:px-7 py-2.5 md:py-3 rounded-full font-medium transition-all duration-300 border-2',
-            activeCategory === category.id
-              ? 'bg-amber-900 text-white border-amber-900 shadow-lg scale-105'
-              : 'bg-white text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-amber-50'
+            activeCategory === category.id ? 'bg-amber-900 text-white border-amber-900 shadow-lg scale-105' : 'bg-white text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-amber-50',
           ]"
         >
           {{ category.name }}
@@ -50,18 +58,13 @@ const activeCategory = ref(menuCategories[0].id)
           leave-to-class="opacity-0 translate-y-8"
         >
           <div
-            v-for="item in menuCategories.find(c => c.id === activeCategory).items"
+            v-for="item in menuCategories.find((c) => c.id === activeCategory).items"
             :key="item.id"
             class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-stone-100"
           >
             <!-- Item Image -->
             <div class="relative h-48 md:h-56 overflow-hidden">
-              <img
-                :src="item.image"
-                :alt="item.name"
-                loading="lazy"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+              <img :src="item.image" :alt="item.name" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-none duration-700" />
               <!-- Price Badge -->
               <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-amber-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                 {{ item.price }}
@@ -76,7 +79,7 @@ const activeCategory = ref(menuCategories[0].id)
                 <h3 class="font-playfair text-xl md:text-2xl font-semibold text-amber-900">
                   {{ item.name }}
                 </h3>
-                <span class="text-amber-700 font-bold text-lg md:hidden">{{ item.price }}</span>
+                <!--<span class="text-amber-700 font-bold text-lg md:hidden">{{ item.price }}</span>-->
               </div>
               <p class="text-stone-600 text-sm md:text-base leading-relaxed">
                 {{ item.description }}
@@ -85,6 +88,9 @@ const activeCategory = ref(menuCategories[0].id)
           </div>
         </transition-group>
       </div>
+    </div>
+    <div v-if="showButton" class="mt-10 flex justify-center md:hidden">
+      <button @click="scrollToTopMenu" class="bg-amber-900 text-white px-6 py-3 rounded-full shadow-lg hover:bg-amber-800 transition-all duration-300">Back to Categories ↑</button>
     </div>
   </section>
 </template>
