@@ -1,0 +1,68 @@
+<script setup>
+import { ref } from 'vue'
+import { supabase } from '@/lib/supabase'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const email = ref('')
+const password = ref('')
+const loading = ref(false)
+const errorMessage = ref('')
+
+const handleLogin = async () => {
+  try {
+    loading.value = true
+    errorMessage.value = ''
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email.value,
+      password: password.value,
+    })
+    
+    if (error) throw error
+    
+    router.push('/admin/pos')
+  } catch (error) {
+    errorMessage.value = error.message
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
+<template>
+  <div class="min-h-screen flex items-center justify-center bg-stone-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-2xl shadow-lg border border-stone-100">
+      <div>
+        <h2 class="mt-2 text-center text-3xl font-extrabold text-amber-900 font-playfair">
+          Ruang Namu Admin
+        </h2>
+        <p class="mt-2 text-center text-sm text-stone-600">
+          Sign in to access POS and Inventory
+        </p>
+      </div>
+      <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
+        <div class="rounded-md shadow-sm -space-y-px">
+          <div class="mb-4">
+            <label for="email-address" class="block text-sm font-medium text-stone-700 mb-1">Email address</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required v-model="email" class="appearance-none relative block w-full px-3 py-2 border border-stone-300 placeholder-stone-500 text-stone-900 rounded-lg focus:outline-none focus:ring-amber-500 focus:border-amber-500 focus:z-10 sm:text-sm transition-colors" placeholder="admin@ruangnamu.com">
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-medium text-stone-700 mb-1">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required v-model="password" class="appearance-none relative block w-full px-3 py-2 border border-stone-300 placeholder-stone-500 text-stone-900 rounded-lg focus:outline-none focus:ring-amber-500 focus:border-amber-500 focus:z-10 sm:text-sm transition-colors" placeholder="••••••••">
+          </div>
+        </div>
+
+        <div v-if="errorMessage" class="text-red-500 text-sm font-medium text-center">
+          {{ errorMessage }}
+        </div>
+
+        <div>
+          <button type="submit" :disabled="loading" class="group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-amber-900 hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all shadow-md disabled:bg-amber-700">
+            <span v-if="loading">Signing in...</span>
+            <span v-else>Sign in</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
